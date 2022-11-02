@@ -36,7 +36,7 @@ function searchById(academyMembers, memID) {
     }
 
 }
-console.log(searchById(academyMembers, 187));
+//console.log(searchById(academyMembers, 187));
 
 
 
@@ -53,34 +53,34 @@ function getAtleastThreeFilms(academyMembers) {
         if (academyMembers[i].films.length >= 3) {
             films.push(academyMembers[i].name)
         }
-        
+
 
     }
     return films;
 
 }
 
-console.log(getAtleastThreeFilms(academyMembers));
+//console.log(getAtleastThreeFilms(academyMembers));
 
 // Who has a name that starts with "Bob"?
 
 function getBob(academyMembers) {
     let numAcademyMembers = academyMembers.length;
     let bob = [];
-    
+
 
     for (let i = 0; i < numAcademyMembers; i++) {
-        if (academyMembers[i].name.indexOf("Bob ")!=-1)  {
+        if (academyMembers[i].name.indexOf("Bob ") != -1) {
             bob.push(academyMembers[i].name)
         }
-        
+
 
     }
     return bob;
 
 }
 
-console.log(getBob(academyMembers));
+//console.log(getBob(academyMembers));
 
 
 // HARDER: Which Academy Members have been in a film
@@ -88,42 +88,24 @@ console.log(getBob(academyMembers));
 
 
 ///that starts with "A"
-function getAFilms(academyMembers){
+function getAFilms(academyMembers) {
     let numAcademyMembers = academyMembers.length;
-    let AFilmsArray = [];
-
-
-    for(let i = 0; i< numAcademyMembers; i++){
-        
-        
-        
-        console.log(academyMembers[i].films.indexOf("A"));
-        AFilmsArray[]
-    }
-
-}
-
-getAFilms(academyMembers)
-
-
-
-/*
-function getMembersFilmsA(academyMembers) {
-    let numAcademyMembers = academyMembers.length;
+    let numFilms = 0;
     let nameMember = [];
-    
+
 
     for (let i = 0; i < numAcademyMembers; i++) {
-        if ((academyMembers[i].films).indexOf()=="A")  {
-            nameMember.push(academyMembers[i].name)
-            
+        numFilms = academyMembers[i].films.length;
+        for (let j = 0; j < numFilms; j++) {
+            if (academyMembers[i].films[j].indexOf("A") == 0) {
+                nameMember.push(academyMembers[i].name)
+                break;
+            }
+
+
         }
-        
 
     }
     return nameMember;
-
 }
-
-console.log(getMembersFilmsA(academyMembers));
-*/
+console.log(getAFilms(academyMembers));
